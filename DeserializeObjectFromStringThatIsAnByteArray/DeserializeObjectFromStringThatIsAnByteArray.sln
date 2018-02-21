@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeserializeObjectFromStringThatIsAnByteArray", "SerializeObjectToByteArray\DeserializeObjectFromStringThatIsAnByteArray.csproj", "{16CFD5B3-65C1-4286-8F39-D9850B91FFCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginDesign", "PluginDesign\PluginDesign.csproj", "{9D84F5DD-9734-4EDC-A2E4-7DA02281FC3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16CFD5B3-65C1-4286-8F39-D9850B91FFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16CFD5B3-65C1-4286-8F39-D9850B91FFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16CFD5B3-65C1-4286-8F39-D9850B91FFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16CFD5B3-65C1-4286-8F39-D9850B91FFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D84F5DD-9734-4EDC-A2E4-7DA02281FC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D84F5DD-9734-4EDC-A2E4-7DA02281FC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D84F5DD-9734-4EDC-A2E4-7DA02281FC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D84F5DD-9734-4EDC-A2E4-7DA02281FC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F0CC561-951D-4BF1-BA73-563F00DE1B66}
+	EndGlobalSection
+EndGlobal
