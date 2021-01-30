@@ -5,6 +5,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SerializeObjectToByteArray
 {
+    /// <summary>
+    /// IMPORTANT:
+    ///     -   BinaryFormatter serialization methods are obsolete and prohibited in ASP.NET apps
+    //          https://docs.microsoft.com/es-es/dotnet/core/compatibility/core-libraries/5.0/binaryformatter-serialization-obsolete
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
