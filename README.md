@@ -11,3 +11,4 @@ Explore, experiments, test and play Serialization and Deserialization in .NET (F
 |[DeserializeJsonToDynamic](https://github.com/fernandezja/serialization-experiments-dotnet/tree/master/DeserializeJsonToDynamic)   	| Deserialize a dynamic object with Newtonsoft.Json   	|
 |[DeserializeJsonToListT](https://github.com/fernandezja/serialization-experiments-dotnet/tree/master/DeserializeJsonToListT)   	|  Deserialize a list T with Newtonsoft.Json  	|
 |[SystemTextJsonToDynamic](https://github.com/fernandezja/serialization-experiments-dotnet/tree/master/SystemTextJsonToDynamic)   	| Deserialize an object with System.Text.Json using an anonymous object as a helper  |
+|[SerializeAndDeserializeXml](https://github.com/fernandezja/serialization-experiments-dotnet/tree/master/SerializeAndDeserializeXml)   	| Serialize/Deserialize Xml  |
