@@ -71,6 +71,15 @@ namespace DeserializeObjectFromStringThatIsAnByteArray
             }
         }
 
+
+        /// <summary>
+        /// Error	SYSLIB0011	'BinaryFormatter.Deserialize(Stream)' is obsolete: 'BinaryFormatter serialization is obsolete and should not be used. See https://aka.ms/binaryformatter for more information.'
+        /// https://learn.microsoft.com/es-es/dotnet/core/compatibility/core-libraries/5.0/binaryformatter-serialization-obsolete
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        [Obsolete("")]
         private static T ByteArrayToObject<T>(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream())
