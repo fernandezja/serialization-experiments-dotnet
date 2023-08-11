@@ -12,7 +12,7 @@ namespace SerializeAndDeserializeXml
     [XmlRoot(ElementName = "jedi", Namespace = "https://www.starwars.com")]
     public class Jedi
     {
-        [XmlElement(ElementName ="id")]
+        [XmlElement(ElementName ="id", Namespace = "https://www.starwars.com")]
         public int Id { get; set; }
 
         [XmlElement(ElementName = "name")]

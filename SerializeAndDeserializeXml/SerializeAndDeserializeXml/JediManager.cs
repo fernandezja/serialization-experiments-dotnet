@@ -26,7 +26,26 @@ namespace SerializeAndDeserializeXml
             }
         }
 
-     
+        public string SerializeWithNamespaces(Jedi jedi)
+        {
+            var namespaces = new XmlSerializerNamespaces();
+            namespaces.Add("sw", "https://www.starwars.com");
+            namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+          
+
+            using (var ms = new MemoryStream())
+            {
+                _serializer.Serialize(stream: ms,
+                                      o: jedi, 
+                                      namespaces: namespaces);
+
+                ms.Position = 0;
+                ms.Seek(0, SeekOrigin.Begin);
+                return Encoding.ASCII.GetString(ms.ToArray());
+            }
+        }
+
+
         public Jedi Deserialize(string xmlData)
         {
             using (TextReader reader = new StringReader(xmlData))
