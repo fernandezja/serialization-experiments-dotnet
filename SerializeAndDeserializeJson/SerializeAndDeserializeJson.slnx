@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SerializeAndDeserializeJson.Tests/SerializeAndDeserializeJson.Tests.csproj" Id="ad16e941-bf9c-4594-9419-6e520685b4c0" />
+  <Project Path="SerializeAndDeserializeJson/SerializeAndDeserializeJson.csproj" Id="3ebcfc90-fe6b-4622-9a9b-26a7b5ea5eba" />
+</Solution>
