@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="DeserializeObjectFromStringThatIsAnByteArray.Tests/DeserializeObjectFromStringThatIsAnByteArray.Tests.csproj" />
   <Project Path="PluginDesign/PluginDesign.csproj" />
-  <Project Path="SerializeObjectToByteArray/DeserializeObjectFromStringThatIsAnByteArray.csproj" />
+  <Project Path="DeserializeObjectFromStringThatIsAnByteArray/DeserializeObjectFromStringThatIsAnByteArray.csproj" />
 </Solution>
