@@ -27,7 +27,7 @@ jobs:
             'SerializeObjectToByteArray/SerializeObjectToByteArray.slnx',
             'SystemTextJson/SystemTextJsonConsole.slnx',
             'SystemTextJsonToDynamic/SystemTextJsonToDynamic.slnx',
-            'REDox/REDoxExampleConsoleApp.slnx',
+            'REDox/REDoxExampleConsoleApp.slnx'
           )
 
           foreach ($solution in $solutions) {
