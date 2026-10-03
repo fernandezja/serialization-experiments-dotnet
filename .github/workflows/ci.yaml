@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  net10-tests:
+    name: .NET 10 tests
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Test .NET 10 solutions
+        shell: pwsh
+        run: |
+          $solutions = @(
+            'DeserializeJsonToListT/DeserializeJsonToListT.slnx',
+            'DeserializeObjectFromStringThatIsAnByteArray/DeserializeObjectFromStringThatIsAnByteArray.slnx',
+            'SerializeAndDeserializeXml/SerializeAndDeserializeXml.slnx',
+            'SerializeObjectToByteArray/SerializeObjectToByteArray.slnx',
+            'SystemTextJson/SystemTextJsonConsole.slnx',
+            'SystemTextJsonToDynamic/SystemTextJsonToDynamic.slnx'
+          )
+
+          foreach ($solution in $solutions) {
+            dotnet test $solution --configuration Release
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+
+  net48-tests:
+    name: .NET Framework 4.8 tests
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore packages.config dependencies
+        shell: pwsh
+        run: |
+          nuget restore DeserializeJsonToDynamic/DeserializeJsonToDynamic/../DeserializeJsonToDynamic.Tests/packages.config -PackagesDirectory DeserializeJsonToDynamic/packages
+          nuget restore DeserializeJsonToDynamic/DeserializeJsonToDynamic/packages.config -PackagesDirectory DeserializeJsonToDynamic/packages
+          nuget restore SerializeAndDeserializeJson/SerializeAndDeserializeJson.Tests/packages.config -PackagesDirectory SerializeAndDeserializeJson/SerializeAndDeserializeJson/packages
+          nuget restore SerializeAndDeserializeJson/SerializeAndDeserializeJson/packages.config -PackagesDirectory SerializeAndDeserializeJson/SerializeAndDeserializeJson/packages
+
+      - name: Build .NET Framework projects
+        shell: pwsh
+        run: |
+          msbuild DeserializeJsonToDynamic/DeserializeJsonToDynamic.slnx /t:Rebuild /p:Configuration=Release
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          msbuild SerializeAndDeserializeJson/SerializeAndDeserializeJson.slnx /t:Rebuild /p:Configuration=Release
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Run .NET Framework tests
+        shell: pwsh
+        run: |
+          $tests = @(
+            'DeserializeJsonToDynamic/DeserializeJsonToDynamic.Tests/bin/Release/DeserializeJsonToDynamic.Tests.dll',
+            'SerializeAndDeserializeJson/SerializeAndDeserializeJson.Tests/bin/Release/SerializeAndDeserializeJson.Tests.dll'
+          )
+
+          foreach ($test in $tests) {
+            $adapterPath = Split-Path $test
+            dotnet vstest $test "/TestAdapterPath:$adapterPath" --Logger:console
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
