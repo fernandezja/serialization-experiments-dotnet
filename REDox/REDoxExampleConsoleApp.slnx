@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="REDoxExampleConsoleApp.Tests/REDoxExampleConsoleApp.Tests.csproj" />
+  <Project Path="REDoxExampleConsoleApp/REDoxExampleConsoleApp.csproj" />
+</Solution>
