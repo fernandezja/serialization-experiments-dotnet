@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SerializeAndDeserializeXml.Tests/SerializeAndDeserializeXml.Tests.csproj" />
+  <Project Path="SerializeAndDeserializeXml/SerializeAndDeserializeXml.csproj" />
+</Solution>

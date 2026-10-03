@@ -12,7 +12,7 @@ namespace DeserializeJsonToDynamic
         {
 
             var jsonData = "{\"Dolares\":[{\"Valor\": \"603,31\",\"Fecha\": \"2018-04-27\"}]}";
-            dynamic demo = Newtonsoft.Json.Linq.JObject.Parse(jsonData);
+            dynamic demo = DolarJsonDeserializer.ParseDynamic(jsonData);
 
             Console.WriteLine(demo.Dolares[0].Valor);
             Console.WriteLine(demo.Dolares[0].Fecha);
@@ -24,7 +24,7 @@ namespace DeserializeJsonToDynamic
             }
 
 
-            DolarViewModel demo2 = Newtonsoft.Json.JsonConvert.DeserializeObject<DolarViewModel>(jsonData);
+            DolarViewModel demo2 = DolarJsonDeserializer.Deserialize(jsonData);
             Console.WriteLine(demo2.Dolares[0].Valor);
             Console.WriteLine(demo2.Dolares[0].Fecha);
 

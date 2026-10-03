@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{90E8260D-B2AB-461C-937F-D33B85180655}</ProjectGuid>
+    <ProjectGuid>{3EBCFC90-FE6B-4622-9A9B-26A7B5EA5EBA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DeserializeJsonToDynamic</RootNamespace>
-    <AssemblyName>DeserializeJsonToDynamic</AssemblyName>
+    <RootNamespace>SerializeAndDeserializeJson</RootNamespace>
+    <AssemblyName>SerializeAndDeserializeJson</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,8 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DolarViewModel.cs" />
-    <Compile Include="DolarJsonDeserializer.cs" />
+    <Compile Include="BookingJsonProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

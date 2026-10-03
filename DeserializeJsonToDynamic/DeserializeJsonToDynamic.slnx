@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DeserializeJsonToDynamic.Tests/DeserializeJsonToDynamic.Tests.csproj" Id="6db37bb3-b4bb-450b-ba58-157556a4edfd" />
+  <Project Path="DeserializeJsonToDynamic/DeserializeJsonToDynamic.csproj" Id="90e8260d-b2ab-461c-937f-d33b85180655" />
+</Solution>

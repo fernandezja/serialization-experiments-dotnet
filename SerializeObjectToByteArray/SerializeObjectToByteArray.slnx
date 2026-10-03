@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SerializeObjectToByteArray.Tests/SerializeObjectToByteArray.Tests.csproj" />
+  <Project Path="SerializeObjectToByteArray/SerializeObjectToByteArray.csproj" />
+</Solution>

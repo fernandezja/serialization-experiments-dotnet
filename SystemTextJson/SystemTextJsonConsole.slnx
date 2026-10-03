@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SystemTextJsonConsole.Tests/SystemTextJsonConsole.Tests.csproj" />
+  <Project Path="SystemTextJsonConsole/SystemTextJsonConsole.csproj" />
+</Solution>

@@ -20,7 +20,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="SerializeObjectToByteArray.Tests" />
+    <ProjectReference Include="..\PluginDesign\PluginDesign.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DeserializeObjectFromStringThatIsAnByteArray.Tests" />
   </ItemGroup>
 
 </Project>
