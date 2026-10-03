@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DeserializeJsonToListT.Tests/DeserializeJsonToListT.Tests.csproj" />
+  <Project Path="DeserializeJsonToListT/DeserializeJsonToListT.csproj" />
+</Solution>
