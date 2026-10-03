@@ -16,6 +16,7 @@ Small .NET samples exploring serialization and deserialization with JSON, XML, a
 | [SystemTextJson](SystemTextJson) | Deserializes application configuration with `System.Text.Json` and prints a selected setting. |
 | [SystemTextJsonToDynamic](SystemTextJsonToDynamic) | Deserializes movie JSON with `System.Text.Json`, including case-insensitive property names and default values. |
 | [SerializeAndDeserializeXml](SerializeAndDeserializeXml) | Serializes and deserializes Jedi objects as XML, including XML namespaces. |
+| [REDox/REDoxExampleConsoleApp](REDox/REDoxExampleConsoleApp) | Uses the `CAPCOM.REDox` NuGet package to serialize and deserialize Jedi objects and edit JSON documents through a mutable token DOM. |
 
 ## Important security note
 
