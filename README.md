@@ -2,6 +2,8 @@
 
 Small .NET samples exploring serialization and deserialization with JSON, XML, and binary data. Most projects target .NET 10 and include unit tests.
 
+[![CI](https://github.com/fernandezja/serialization-experiments-dotnet/actions/workflows/ci.yaml/badge.svg)](https://github.com/fernandezja/serialization-experiments-dotnet/actions/workflows/ci.yaml)
+
 ## Samples
 
 | Project | What it demonstrates |
