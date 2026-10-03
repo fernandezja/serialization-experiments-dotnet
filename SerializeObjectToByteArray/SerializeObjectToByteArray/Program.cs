@@ -8,11 +8,23 @@ namespace SerializeObjectToByteArray
     /// <summary>
     /// IMPORTANT:
     ///     -   BinaryFormatter serialization methods are obsolete and prohibited in ASP.NET apps
-    //          https://docs.microsoft.com/es-es/dotnet/core/compatibility/core-libraries/5.0/binaryformatter-serialization-obsolete
+    ///          https://docs.microsoft.com/es-es/dotnet/core/compatibility/core-libraries/5.0/binaryformatter-serialization-obsolete
+    ///
+    /// PROOF OF CONCEPT ONLY — NOT RECOMMENDED FOR PRODUCTION!!!
+    /// The setting only enables BinaryFormatter on runtimes that still support it.
+    /// This project targets .NET 10, where BinaryFormatter throws
+    /// PlatformNotSupportedException. It is obsolete and vulnerable; never deserialize
+    /// untrusted data.
+    ///
+    /// Anyone who copies or enables this setting in another application does so at
+    /// their own risk and is solely responsible for assessing its security impact.
+    ///
+    /// Remove this setting and migrate to a supported serialization format before
+    /// using this code in production.
     /// </summary>
     class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
             var hashTable = new Hashtable();
             hashTable.Add(1, new Jedi { Id = 11, Name= "Yoda" });
@@ -42,7 +54,7 @@ namespace SerializeObjectToByteArray
             Console.ReadKey();
         }
 
-        private static byte[] ObjectToByteArray(object obj)
+        internal static byte[] ObjectToByteArray(object obj)
         {
             if (obj == null)
                 return null;
@@ -55,8 +67,10 @@ namespace SerializeObjectToByteArray
             }
         }
 
-        private static T ByteArrayToObject<T>(byte[] data)
+        internal static T ByteArrayToObject<T>(byte[] data)
         {
+            ArgumentNullException.ThrowIfNull(data);
+
             using (MemoryStream ms = new MemoryStream())
             {
                 var binaryFormatter = new BinaryFormatter();
