@@ -6,9 +6,10 @@
 	  <!--
   PROOF OF CONCEPT ONLY — NOT RECOMMENDED FOR PRODUCTION.
 
-  This setting enables unsafe BinaryFormatter serialization solely to demonstrate
-  and test compatibility with legacy code. BinaryFormatter is obsolete and has
-  known security vulnerabilities. It must never be used to deserialize untrusted data.
+  This setting only enables BinaryFormatter on runtimes that still support it.
+  BinaryFormatter is removed in .NET 9 and later; this project targets .NET 10,
+  where serialization and deserialization throw PlatformNotSupportedException.
+  BinaryFormatter is obsolete and vulnerable. Never deserialize untrusted data.
 
   Anyone who copies or enables this setting in another application does so at
   their own risk and is solely responsible for assessing its security impact.
@@ -20,6 +21,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PluginDesign\PluginDesign.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DeserializeObjectFromStringThatIsAnByteArray.Tests" />
   </ItemGroup>
 
 </Project>
