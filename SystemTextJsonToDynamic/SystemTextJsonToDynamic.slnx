@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SystemTextJsonToDynamic.Tests/SystemTextJsonToDynamic.Tests.csproj" />
+  <Project Path="SystemTextJsonToDynamic/SystemTextJsonToDynamic.csproj" />
+</Solution>
