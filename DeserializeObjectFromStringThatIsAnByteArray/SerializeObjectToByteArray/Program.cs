@@ -4,9 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DeserializeObjectFromStringThatIsAnByteArray
 {
+    /// <summary>
+    /// PROOF OF CONCEPT ONLY — NOT RECOMMENDED FOR PRODUCTION!!!
+    /// This setting enables unsafe BinaryFormatter serialization solely to demonstrate
+    /// and test compatibility with legacy code.BinaryFormatter is obsolete and has
+    /// known security vulnerabilities.It must never be used to deserialize untrusted data.
+    ///
+    /// Anyone who copies or enables this setting in another application does so at
+    /// their own risk and is solely responsible for assessing its security impact.
+    ///
+    /// Remove this setting and migrate to a supported serialization format before
+    /// using this code in production.
+    ///</summary>
     class Program
     {
         static void Main(string[] args)
@@ -62,8 +76,9 @@ namespace DeserializeObjectFromStringThatIsAnByteArray
         {
             if (obj == null)
                 return null;
-
+#pragma warning disable SYSLIB0011
             BinaryFormatter bf = new BinaryFormatter();
+#pragma warning restore SYSLIB0011
             using (MemoryStream ms = new MemoryStream())
             {
                 bf.Serialize(ms, obj);
@@ -75,7 +90,9 @@ namespace DeserializeObjectFromStringThatIsAnByteArray
         {
             using (MemoryStream ms = new MemoryStream())
             {
+#pragma warning disable SYSLIB0011
                 var binaryFormatter = new BinaryFormatter();
+#pragma warning restore SYSLIB0011
                 ms.Write(data, 0, data.Length);
                 ms.Seek(0, SeekOrigin.Begin);
                 T obj = (T)binaryFormatter.Deserialize(ms);

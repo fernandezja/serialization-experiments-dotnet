@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PluginDesign/PluginDesign.csproj" />
+  <Project Path="SerializeObjectToByteArray/DeserializeObjectFromStringThatIsAnByteArray.csproj" />
+</Solution>
